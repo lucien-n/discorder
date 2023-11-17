@@ -107,4 +107,9 @@ def main() -> None:
             exit(1)
 
 
-main()
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nQuitting")
+        exit(0)
