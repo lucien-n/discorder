@@ -5,7 +5,7 @@ import time
 import argparse
 
 
-def get_arguments() -> dict[str, any]:
+def get_arguments() -> dict:
     parser = argparse.ArgumentParser(description="Automatic message sender")
 
     parser.add_argument(
@@ -43,7 +43,16 @@ def load_env(path: str) -> None:
         raise Exception(f"Could not load '{path}'")
 
 
-def get_input(prompt: str, wrapper, error: str = "Please enter a valid string") -> any:
+def get_token() -> str:
+    token = os.getenv("DISCORD_TOKEN")
+
+    if not token:
+        raise ValueError("Could not find DISCORD_TOKEN key in env")
+
+    return token
+
+
+def get_input(prompt: str, wrapper, error: str = "Please enter a valid string"):
     try:
         value = wrapper(input(prompt))
     except ValueError:
@@ -52,7 +61,7 @@ def get_input(prompt: str, wrapper, error: str = "Please enter a valid string") 
     return value
 
 
-def send(token: str, url: str, payload: object, index: int) -> bool:
+def send(token: str, url: str, payload: dict, index: int) -> bool:
     res = requests.post(url, data=payload, headers={"authorization": token})
     status = res.status_code
 
@@ -71,7 +80,7 @@ def send(token: str, url: str, payload: object, index: int) -> bool:
 
 def main() -> None:
     load_env(".env")
-    token = os.getenv("DISCORD_TOKEN")
+    token = get_token()
 
     args = get_arguments()
 
