@@ -30,7 +30,9 @@ You can pass arguments in the command line instead of having to fill out prompts
 <br/>
 
 # Help
-[How to get my discord token ? (video)](https://www.youtube.com/watch?v=YEgFvgg7ZPI) [How to get my discord token ? (text)](https://www.geeksforgeeks.org/how-to-get-discord-token/) **BE VERY CAREFUL WITH THIS TOKEN - DO NOT SHARE IT WITH ANYONE**
+**BE VERY CAREFUL WITH THIS TOKEN - DO NOT SHARE IT WITH ANYONE**
+[How to get my discord token ? (video)](https://www.youtube.com/watch?v=YEgFvgg7ZPI) 
+[How to get my discord token ? (text)](https://www.geeksforgeeks.org/how-to-get-discord-token/) 
 
 <br/>
 
